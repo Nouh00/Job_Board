@@ -1,0 +1,28 @@
+{% load static %}
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    {% tailwind_preload_css %}
+    {% tailwind_css v='1' %}
+    <title>Neama Discovery</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock content %}
+    {% include 'footer.html' %}
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script>
+        document.body.addEventListener("htmx:configRequest", (event)=>{
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}'
+        })
+    </script>
+    {% block custom_js %}{% endblock custom_js %}
+</body>
+</html>

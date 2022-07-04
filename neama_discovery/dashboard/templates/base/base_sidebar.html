@@ -1,0 +1,89 @@
+
+{% load static %}
+
+  <div>
+    <div class="-mx-6 px-6 py-4">
+      <a href="{% url 'home' %}" title="home">
+        <img src="{% static 'img/logo_ndc.png' %}" class="w-32" alt="tailus logo" />
+      </a>
+    </div>
+
+    
+    {% block pages %}
+    
+    {% endblock pages %}
+  </div>
+  <a href="{% url 'add-company' %}">
+  <button
+      class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+    >
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span class="group-hover:text-gray-700">Create Company Profile</span>
+    </button>
+  </a>
+  <div
+    class="px-6 -mx-6 pt-4 flex flex-col justify-between items-start border-t"
+  >
+    <button
+      class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group" id="dropdownRightButton" data-dropdown-toggle="dropdownRight" data-dropdown-placement="right"
+    >
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span class="group-hover:text-gray-700">User Profile</span>
+    </button>
+    <!-- Dropdown menu -->
+      <div id="dropdownRight" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRightButton">
+          <li>
+            <a href="{% url 'recruiter-profile' request.user.id %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Profile</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit Profile</a>
+          </li>
+        </ul>
+      </div>
+    <a href="{% url 'logout' %}">
+    <button
+      class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+        />
+      </svg>
+      <span class="group-hover:text-gray-700">Logout</span>
+    </button>
+  </a>
+  </div>

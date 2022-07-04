@@ -1,0 +1,330 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<header>
+    
+    <div class="pt-32 pb-16 md:pt-40 overflow-hidden ">
+        <div class="container m-auto px-6 md:px-12 lg:px-6">
+            <img alt="profil" src="img/logo.png" class="bg-slate-100 rounded-b-lg h-80 w-full mb-4" />
+            <div class="flex flex-row items-start pl-6 -mt-16">
+                <a href="#" class="block relative">
+                    <img alt="profil" src="img/n1.png"
+                        class="bg-white mx-auto shadow-md object-cover rounded-lg sm:h-20 sm:w-20 md:h-44 md:w-44  border-2 border-white " />
+                </a>
+                <div class="flex flex-col  mt-14 ml-4">
+                    <p class="text-gray-800 text-4xl font-medium mt-2">
+                        Neama Voluntary
+                    </p>
+                    <p class="text-gray-400 text-xs mb-4">
+                        Non-profit
+                    </p>
+                    <div class="flex flex-row space-x-4">
+                        <p class="text-xs p-2 bg-gray-300 text-white px-4 rounded-full">
+                            Professional
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-gray-600 ">
+                            <p class="flex flex-row">
+                                <span class="text-black font-bold pr-1">
+                                    455
+                                </span>
+                                Followers
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex m-auto px-6 md:px-12 lg:px-6 border-gray-200 md:w-3/4 lg:w-3/4">
+        <button
+            class="flex items-center h-10 px-2 py-2 -mb-px text-center text-blue-600 bg-transparent border-b-2 border-blue-500 sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
+
+            <span class="mx-1 text-sm sm:text-base">
+                About the Company
+            </span>
+        </button>
+
+        <button
+            class="flex items-center h-10 px-2 py-2 -mb-px text-center text-gray-700 bg-transparent border-b-2 border-transparent sm:px-4 -px-1 whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400">
+
+            <span class="mx-1 text-sm sm:text-base">
+                Opportunities
+            </span>
+        </button>
+    </div>
+</header>
+<section class="container m-auto mt-8 px-6 md:px-12 lg:px-6">
+    <div class="md:flex md:flex-row  text-gray-600">
+        <!--column1-->
+        <div class="md:w-3/4 lg:w-3/4">
+            <div class="text-gray-600  body-font overflow-hidden">
+                <div class="container px-8" bis_skin_checked="1">
+                    <div class="divide-y-2  divide-gray-100" bis_skin_checked="1">
+                        <div class="py-8 flex flex-wrap  md:flex-nowrap" bis_skin_checked="1">
+                            <div class="md:flex-grow" bis_skin_checked="1">
+                                <div class="flex items-center space-x-4">
+                                    <svg class="h-7 w-7 text-blue-300" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                    </svg>
+                                    <h2 class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1">
+                                        Opportunity Description</h2>
+                                </div>
+                                <p class="leading-relaxed mt-6">Glossier echo park pug, church-key sartorial
+                                    biodiesel
+                                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger
+                                    bag
+                                    selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie
+                                    portland
+                                    craft beer. bag
+                                    selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie
+                                    portland
+                                    craft beer.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-gray-600 body-font">
+                            <div class="container py-8 mx-auto flex flex-wrap" bis_skin_checked="1">
+                                <div class="flex items-center space-x-4">
+                                    <svg class="h-7 w-7 text-blue-300" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                    </svg>
+                                    <h2 class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1">
+                                        Company Images</h2>
+                                </div>
+                                <!--image grid-->
+                                <div class="flex flex-wrap mt-6" bis_skin_checked="1">
+                                    <div class="flex flex-wrap w-1/2" bis_skin_checked="1">
+                                        <div class="md:p-2 p-1 w-1/2" bis_skin_checked="1">
+                                            <img alt="gallery"
+                                                class="w-full object-cover h-full object-center block bg-gray-300"
+                                                src="img/cover.jpg">
+                                        </div>
+                                        <div class="md:p-2 p-1 w-1/2" bis_skin_checked="1">
+                                            <img alt="gallery"
+                                                class="w-full object-cover h-full object-center block bg-gray-300"
+                                                src="img/cover.jpg">
+                                        </div>
+                                        <div class="md:p-2 p-1 w-full" bis_skin_checked="1">
+                                            <img alt="gallery"
+                                                class="w-full h-full object-cover object-center block bg-gray-300"
+                                                src="img/cover.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap w-1/2" bis_skin_checked="1">
+                                        <div class="md:p-2 p-1 w-full" bis_skin_checked="1">
+                                            <img alt="gallery"
+                                                class="w-full h-full object-cover object-center block bg-gray-300"
+                                                src="img/cover.jpg">
+                                        </div>
+                                        <div class="md:p-2 p-1 w-1/2" bis_skin_checked="1">
+                                            <img alt="gallery"
+                                                class="w-full object-cover h-full object-center block bg-gray-300"
+                                                src="img/cover.jpg">
+                                        </div>
+                                        <div class="md:p-2 p-1 w-1/2" bis_skin_checked="1">
+                                            <img alt="gallery"
+                                                class="w-full object-cover h-full object-center block bg-gray-300"
+                                                src="img/cover.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-gray-600 body-font">
+                            <div class="container py-8 mx-auto flex flex-wrap" bis_skin_checked="1">
+                                <div class="flex items-center space-x-4">
+                                    <svg class="h-7 w-7 text-blue-300" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                    </svg>
+                                    <h2 class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1">
+                                        Video</h2>
+                                </div>
+                                <img class="mt-6" src="img/vid_thumb.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--column2-->
+        <div class=" md:flex md:flex-col md:space-y-4 sm:space-y-8 ">
+            <div class=" max-w-sm mx-auto  overflow-hidden bg-white rounded-lg shadow-lg ">
+                <div class="flex items-center px-6 pt-3">
+                    <svg class="h-5 w-5 text-gray-500 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <h1 class="mx-3 text-2xl  font-semibold">Details</h1>
+                </div>
+
+                <div class="px-6 divide-y-2  divide-gray-100">
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class=" max-w-sm mx-auto  overflow-hidden bg-white rounded-lg shadow-lg ">
+                <div class="flex items-center px-6 pt-3">
+                    <svg class="h-5 w-5 text-gray-500 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <h1 class="mx-3 text-2xl  font-semibold"> Semilar Companies</h1>
+                </div>
+
+                <div class="px-6 divide-y-2  divide-gray-100">
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center my-4 text-gray-700">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 11H10V13H14V11Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                        </svg>
+
+                        <div class="flex flex-col ml-8 mt-4">
+                            <h1 class="text-md font-semibold">Meraki UI</h1>
+                            <p class="py-2 text-sm text-gray-700">Full Stack maker & UI / UX Designer , love hip
+                                hop music Author of Building UI.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="text-gray-600">
+
+    <div class="py-16 bg-gradient-to-br md:bg-gradient-to-r">
+        <div class="container m-auto px-6 text-center md:px-12 lg:px-20">
+            <h2 class="mb-8 text-4xl font-bold md:text-4xl capitalize">Wont to know more about neama Voluntary</h2>
+            <a href="#" title="Create account"
+                class="w-max py-3 px-12 text-center rounded-xl transition bg-white shadow-md hover:bg-purple-100 active:bg-purple-200 focus:bg-purple-100">
+                <span class="text-purple-600 font-semibold">
+                    Create my account now
+                </span>
+            </a>
+        </div>
+    </div>
+
+</section>
+{% endblock content %}

@@ -1,0 +1,361 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="pt-32 pb-20 md:pt-40">
+        <div class="container m-auto px-6 md:px-12 lg:px-6">
+            <div class="lg:flex lg:items-center lg:gap-x-16">
+                <div class="space-y-8 lg:w-7/12">
+                    <h1 class=" font-bold text-gray-900 text-4xl md:text-5xl">Volunteer with Us.</h1>
+                    <p class="text-gray-600 lg:w-11/12 text-xl">
+                        Apply for various opportunities around the country and start exploring, here's a video tells
+                        you how.
+                    </p>
+
+                    <div class="space-y-8">
+                        🔥🌟
+                        <span>Other integrations :</span>
+                        <a href="#" class="font-semibold text-gray-700">Discord,</a>
+                        <a href="#" class="font-semibold text-gray-700">Telegram</a>
+                        <form action="{% url 'opportunities' %}" class="w-full">
+                            <div class="flex p-1 rounded-xl bg-white shadow-2xl md:p-2">
+                                <input placeholder="Your favorite position" name="q" class="w-full p-4" type="text">
+                                <button type="submit" title="Start buying"
+                                    class="ml-auto py-3 px-6 rounded-lg text-center transition bg-gradient-to-br from-pink-500 to-purple-500 hover:to-purple-600 active:from-pink-700 focus:from-pink-600 md:px-12">
+                                    <span class="hidden text-white font-semibold md:block">
+                                        Search
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 mx-auto text-white md:hidden"
+                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div hidden class="lg:block lg:w-5/12">
+                    <img src="{% static 'img/hero_img.png' %}" class="w-full" alt="wath illustration" loading="lazy" width="320"
+                        height="280">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+  <!--first feature-->
+
+  <section class="bg-white bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class=" container px-6 py-10 mx-auto">
+        <h1 class="text-3xl text-center font-semibold text-gray-800 capitalize lg:text-4xl ">How Neama Discovery
+            Works ?</h1>
+
+        <div class="mt-2 text-center">
+            <span class="inline-block w-40 h-1 rounded-full bg-blue-500"></span>
+            <span class="inline-block w-1 h-1 ml-1 rounded-full bg-blue-500"></span>
+            <span class="inline-block w-3 h-1 ml-1 rounded-full bg-blue-500"></span>
+        </div>
+
+        <div class="mt-8 xl:mt-12 lg:flex lg:items-center">
+            <div class="w-full lg:w-1/2 grid grid-cols-1 gap-8 xl:gap-16 md:grid-cols-2">
+                <div class="space-y-3">
+                    <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </span>
+
+                    <h1 class="text-2xl font-semibold text-gray-700 capitalize ">New Components</h1>
+
+                    <p class="text-gray-500 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos
+                        vel non corrupti doloribus voluptatum eveniet
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                        </svg>
+                    </span>
+
+                    <h1 class="text-2xl font-semibold text-gray-700 capitalize ">elegant Dark Mode</h1>
+
+                    <p class="text-gray-500 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos
+                        vel non corrupti doloribus voluptatum eveniet
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                        </svg>
+                    </span>
+
+                    <h1 class="text-2xl font-semibold text-gray-700 capitalize ">Easy to customiztions</h1>
+
+                    <p class="text-gray-500 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos
+                        vel non corrupti doloribus voluptatum eveniet
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </span>
+
+                    <h1 class="text-2xl font-semibold text-gray-700 capitalize ">Simple & clean designs</h1>
+
+                    <p class="text-gray-500 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos
+                        vel non corrupti doloribus voluptatum eveniet
+                    </p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
+                <img class="w-[28rem] h-[28rem] flex-shrink-0 object-cover xl:w-[34rem] xl:h-[34rem] rounded-full"
+                    src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                    alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--opportunities-->
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto" bis_skin_checked="1">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+            {% for Opportunity in opportunities %}
+            <div class="flex flex-wrap -m-4 mt-8" bis_skin_checked="1">
+                <div class="" bis_skin_checked="1">
+                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
+                        bis_skin_checked="1">
+                        <a href="{% url 'single-opportunity' Opportunity.id %}" class="">
+                        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/cover.jpg"
+                            alt="Opportunity-cover">
+                        <div class="p-6" bis_skin_checked="1">
+                            <div class="flex flex-row">
+                                <a href="#" class="relative">
+                                    <img alt="profil" src="/img/logo.png"
+                                        class="mx-auto object-cover rounded-full h-16 w-16 " />
+                                </a>
+                                <div class="flex flex-col mx-6 mt-1 mb-8">
+                                    <h1 class="title-font text-lg font-medium text-gray-900 ">{{Opportunity.title}}</h1>
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400">{{Opportunity.company_name}}</h2>
+                                </div>
+                            </div>
+                            <p class="leading-relaxed mb-3">{{Opportunity.description}}</p>
+
+                            <div class="flex mt-1 mb-8">
+                                <div>
+                                    <span class="text-gray-400 mr-3 inline-flex text-sm pr-3 py-1">
+                                        <svg class="h-5 w-5 mt-1 text-gray-500" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <h1 class="mx-2 title-font text-lg font-medium text-gray-900 ">Location</h1>
+                                    </span>
+
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400">
+                                        {{Opportunity.location}}</h2>
+                                </div>
+
+
+                                <div class="ml-16">
+                                    <span class="text-gray-400 mr-3 inline-flex text-sm pr-3 py-1">
+                                        <svg class="h-5 w-5 mt-1 text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                          </svg>
+                                          
+                                        <h1 class="mx-2 title-font text-lg font-medium text-gray-900 ">Duration</h1>
+                                    </span>
+
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400">
+                                        1 Week</h2>
+                                </div>
+                            </div>
+                            <div class="flex items-center flex-wrap " bis_skin_checked="1">
+                                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                                <span
+                                    class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                    <svg class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    {{Opportunity.applicants.count}}
+                                </span>
+                                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <path
+                                            d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                                        </path>
+                                    </svg>6
+                                </span>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button
+            class="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">More
+            Opportunities</button>
+    </div>
+</section>
+
+
+<!--Second feature-->
+<section>
+    <div class="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+            <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                <div class="space-y-6 md:7/12 lg:w-6/12">
+                    <h2 class="text-2xl text-blue-900 font-bold md:text-5xl">Nuxt development is carried out by
+                        passionate developers.</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis
+                            voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae
+                            unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!
+                        </p>
+                        <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat
+                            iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam
+                            mollitia.</p>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-3 px-6 text-center rounded-full transition bg-blue-200 hover:bg-blue-100 active:bg-blue-300 focus:bg-blue-100 sm:w-max">
+                        <span class="block text-blue-900 font-semibold text-sm">
+                            Learn More
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Testimonials-->
+<section>
+
+    <div class="py-16 white">
+        <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+            <h2 class="mb-12 text-center text-2xl text-gray-900 font-bold md:text-4xl">What's our customers say</h2>
+            <div class="grid gap-8 md:grid-rows-2 lg:grid-cols-2">
+                <div class="row-span-2 p-6 border border-gray-100 rounded-xl bg-gray-50 text-center sm:p-8">
+                    <div class="h-full flex flex-col justify-center space-y-4">
+                        <img class="w-20 h-20 mx-auto rounded-full" src="img/profile_pic.png" alt="user avatar"
+                            height="220" width="220" loading="lazy">
+                        <p class="text-gray-600 md:text-xl"> <span class="font-serif">"</span> Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit. Quaerat repellat perspiciatis excepturi est. Non
+                            ipsum iusto aliquam consequatur repellat provident, omnis ut, sapiente voluptates
+                            veritatis cum deleniti repudiandae ad doloribus. <span class="font-serif">"</span></p>
+                        <div>
+                            <h6 class="text-lg font-semibold leading-none">Jane Doe</h6>
+                            <span class="text-xs text-gray-500">Product Designer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8">
+                    <img class="w-20 h-20 mx-auto rounded-full" src="img/profile_pic.png" alt="user avatar"
+                        height="220" width="220" loading="lazy">
+                    <div class="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
+                        <p class="text-gray-600"> <span class="font-serif">"</span> Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Quaerat repellat perspiciatis excepturi est. Non ipsum
+                            iusto aliquam consequatur repellat provident, omnis ut, sapiente voluptates veritatis
+                            cum deleniti repudiandae ad doloribus. <span class="font-serif">"</span></p>
+                        <div>
+                            <h6 class="text-lg font-semibold leading-none">Jane Doe</h6>
+                            <span class="text-xs text-gray-500">Product Designer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8">
+                    <img class="w-20 h-20 mx-auto rounded-full" src="img/profile_pic.png" alt="user avatar"
+                        height="220" width="220" loading="lazy">
+                    <div class="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
+                        <p class="text-gray-600"> <span class="font-serif">"</span> Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Quaerat repellat perspiciatis excepturi est. Non ipsum
+                            iusto aliquam consequatur repellat provident, omnis ut, sapiente voluptates veritatis
+                            cum deleniti repudiandae ad doloribus. <span class="font-serif">"</span></p>
+                        <div>
+                            <h6 class="text-lg font-semibold leading-none">Jane Doe</h6>
+                            <span class="text-xs text-gray-500">Product Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--CTA-->
+<section class="bg-white bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="py-16">
+        <div class="container m-auto px-6 space-y-8 text-gray-500 md:px-12 lg:px-20">
+            <div class="flex items-center justify-center -space-x-2">
+                <img loading="lazy" width="220" height="220" src="img/profile_pic.png" alt="member photo"
+                    class="w-8 h-8 object-cover rounded-full">
+                <img loading="lazy" width="220" height="220" src="img/profile_pic.png" alt="member photo"
+                    class="w-12 h-12 object-cover rounded-full">
+                <img loading="lazy" width="220" height="220" src="img/profile_pic.png" alt="member photo"
+                    class="z-10 w-16 h-16 object-cover rounded-full">
+                <img loading="lazy" width="220" height="220" src="img/profile_pic.png" alt="member photo"
+                    class="relative w-12 h-12 object-cover rounded-full">
+                <img loading="lazy" width="220" height="220" src="img/profile_pic.png" alt="member photo"
+                    class="w-8 h-8 object-cover rounded-full">
+            </div>
+            <div class="m-auto space-y-6 md:w-8/12 lg:w-7/12">
+                <h1 class="text-4xl text-gray-700 font-bold text-center md:text-5xl">Get Started now</h1>
+                <p class="text-xl text-center">Be part of millions people around the world using tailus in modern
+                    User Interfaces.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#" title="More"
+                        class="block w-full py-3 px-6 text-center rounded-xl bg-cyan-100 transition hover:bg-cyan-200 active:bg-cyan-300 focus:bg-cyan-200 sm:w-max">
+                        <span class="text-cyan-700 font-semibold">
+                            More about
+                        </span>
+                    </a>
+                    <a href="#" title="Get started"
+                        class="block w-full py-3 px-6 text-center rounded-xl bg-cyan-600 transition hover:bg-cyan-700 active:bg-cyan-800 focus:bg-sky-600 sm:w-max">
+                        <span class="text-white font-semibold">
+                            Get started
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
