@@ -1,39 +1,60 @@
 
     <div class="md:flex md:flex-col md:space-y-4 sm:space-y-8">
         <div class="w-96 mx-auto overflow-hidden bg-white rounded-lg shadow-md">
+          
           <div class="px-6 divide-y-2 divide-gray-100">
-            <div class="flex items-center my-4 text-gray-700">
-              <div class="flex flex-col ml-8 mt-4">
-                <h1 class="text-md font-semibold">Adresse</h1>
-                <p class="py-2 text-sm text-gray-700">{{user.adresse}}</p>
-              </div>
-            </div>
-            <div class="flex items-center my-4 text-gray-700">
-              <div class="flex flex-col ml-8 mt-4">
-                <h1 class="text-md font-semibold">E-mail</h1>
-                <p class="py-2 text-sm text-gray-700">{{user.email}}</p>
-              </div>
-            </div>
-            <div class="flex items-center my-4 text-gray-700">
-              <div class="flex flex-col ml-8 mt-4">
-                <h1 class="text-md font-semibold">Phone</h1>
-                <p class="py-2 text-sm text-gray-700">{{user.phone}}</p>
-              </div>
-            </div>
-            <div class="flex items-center my-4 text-gray-700">
-              <div class="flex flex-col ml-8 mt-4">
-                <h1 class="text-md font-semibold">Birth</h1>
-                <p class="py-2 text-sm text-gray-700">{{user.birth}}</p>
-              </div>
-            </div>
-            {% for url in urls %}
-            <div class="flex items-center my-4 text-gray-700">
+            
+              <div class="flex items-center my-4 text-gray-700">
                 <div class="flex flex-col ml-8 mt-4">
-                <h1 class="text-md font-semibold">{{url.website | capfirst}}</h1>
-                <p class="py-2 text-sm text-gray-700">{{url.url|urlize}}/</p>
+                  <h1 class="text-md font-semibold">Adresse</h1>
+                  <p class="py-2 text-sm text-gray-700">{{user.adresse}}</p>
+                </div>
               </div>
-            </div>
-            {% endfor %}
+              <div class="flex items-center my-4 text-gray-700">
+                <div class="flex flex-col ml-8 mt-4">
+                  <h1 class="text-md font-semibold">E-mail</h1>
+                  <p class="py-2 text-sm text-gray-700">{{user.email}}</p>
+                </div>
+              </div>
+              <div class="flex items-center my-4 text-gray-700">
+                <div class="flex flex-col ml-8 mt-4">
+                  <h1 class="text-md font-semibold">Phone</h1>
+                  <p class="py-2 text-sm text-gray-700">{{user.phone}}</p>
+                </div>
+              </div>
+              <div class="flex items-center my-4 text-gray-700">
+                <div class="flex flex-col ml-8 mt-4">
+                  <h1 class="text-md font-semibold">Birth</h1>
+                  <p class="py-2 text-sm text-gray-700">{{user.birth}}</p>
+                </div>
+              </div>
+              {% for url in urls %}
+              <div class="flex items-center my-4 text-gray-700">
+                  <div class="flex flex-col ml-8 mt-4">
+                  <h1 class="text-md font-semibold">{{url.website | capfirst}}</h1>
+                  <p class="py-2 text-sm text-gray-700">{{url.url|urlize}}/</p>
+                </div>
+              </div>
+              {% endfor %}
+            
+              
+              
+              <a href="{% url 'update-recruiter' request.user.id %}">
+                <p class="text-center font-semibold p-2 bg-gray-500 text-white px-4 rounded-full">
+                  Update
+                </p>
+              </a>
+            
           </div>
+          
         </div>
       </div>
+
+   
+
+      {% comment %} {% if user.adresse and user.phone and user.email and user.birth %}
+{% else %}
+<h4 class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1">
+Please Add your personel information
+</h4>
+{% endif %} {% endcomment %}

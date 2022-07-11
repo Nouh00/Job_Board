@@ -18,12 +18,14 @@
           />
         </a>
         <div class="flex flex-col text-center">
+          {% if user_data.fname %}
           <p class="text-gray-800 text-4xl text-center font-medium mt-2">
             {{user_data.fname | capfirst}} {{user_data.lname | capfirst}}
           </p>
           <p class="text-gray-400 font-bold text-xs mt-2 mb-4">
             @{{request.user}}
           </p>
+          {% endif %}
           <div class="flex flex-row justify-center">
             <p class="text-xs p-2 bg-gray-300 text-white px-4 rounded-full">
               Web Developer
@@ -33,9 +35,11 @@
             ></div>
           </div>
           <div class="flex flex-row justify-center mt-2">
+            <a href="{% url 'resume:resume' request.user.id %}">
             <p class="text-xs p-2 bg-gray-500 text-white px-4 rounded-full">
-              Edit Resume
+              Resume Preview
             </p>
+          </a>
             <div
               class="flex items-center justify-between text-sm text-gray-600"
             ></div>
@@ -75,15 +79,20 @@
                         About Me
                       </h2>
                     </div>
-                    <p class="mt-4"> 
-                        {{resume_form.bio}}
-                    </p>
+                    {{resume_form.bio.label}}
+                    <form method="POST" class="mt-4 flex space-x-2">
+                      {% csrf_token %}
+                      {{resume_form.bio}}
+                      <button class="w-full text-white font-semibold px-4 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max">
+                        Save
+                      </button>
+                      </form>
                   </div>
                 </div>
                 
                 
                 <div class="text-gray-600 body-font md:flex-nowrap">
-                  <div class="container py-8 mx-auto flex flex-col" id="wrapper">
+                  <div class="container py-8 mx-auto flex flex-col">
                     <div class="flex items-center space-x-4">
                       <svg
                         class="h-7 w-7 text-blue-300"
@@ -109,13 +118,13 @@
                     {% endfor %}
                   </div>
                   {% if new_education_url %}
-                  <div id="education-create"></div>
-                  <button hx-get="{{new_education_url}}"
-                  hx-trigger="click" hx-target="#education-create" hx-swap="beforeend"
-                  class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max"
-                  >
-                  Add New
-                  </button>
+                    <div id="education-create"></div>
+                      <button hx-get="{{new_education_url}}"
+                      hx-trigger="click" hx-target="#education-create" hx-swap="beforeend"
+                      class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max"
+                      >
+                    Add New
+                    </button>
                   {% endif %}
                 </div>
                 
@@ -180,21 +189,19 @@
                         Work Experiences
                       </h2>
                     </div>
-                    {% for work in work %}
-                    <div class="leading-relaxed mt-6 flex flex-col">
-                      <div class="flex flex-row space-x-4">
-                         <h4 class="font-medium"> {{work.title}} </h4>
-                        <p class="text-cyan-600">  {{work.start_date}}  <span class="text-gray-600">To</span>   {{work.end_date}} </p>
-                      </div>
-                      <div class="flex flex-row space-x-2">
-                        <h4 class="text-cyan-600"> {{work.organization}}, </h4>
-                        <p class="text-cyan-600"> {{work.wilaya}} </p>
-                      </div>
-                      <p class="mt-4">
-                        {{experience.description}}
-                      </p> 
-                    </div>
+                    {% for work in resume.get_work %}
+                    {% include 'base/partials/work_inline.html' with data=work %}
                     {% endfor %}
+                  </div>
+                  {% if new_work_url %}
+                  <div id="work-create"></div>
+                  <button hx-get="{{new_work_url}}"
+                  hx-trigger="click" hx-target="#work-create" hx-swap="beforeend"
+                  class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max"
+                  >
+                  Add New
+                  </button>
+                  {% endif %}
                   </div>
                 </div>
                 
@@ -221,12 +228,62 @@
                         Skills
                       </h2>
                     </div>
-                    <div class="leading-relaxed mt-6 flex flex-col">
-                      {{skills}}
-                    </div>
+                    {% for skill in resume.get_skills %}
+                    <ul>
+                      <li>{% include 'base/partials/skills_inline.html' with data=skill %}</li>
+                    </ul>
+                    
+                    {% endfor %}
+                  </div>
+                  {% if new_skill_url %}
+                  <div id="skill-create"></div>
+                  <button hx-get="{{new_skill_url}}"
+                  hx-trigger="click" hx-target="#skill-create" hx-swap="beforeend"
+                  class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max"
+                  >
+                  Add New
+                  </button>
+                  {% endif %}
                   </div>
                 </div>
                 
+                <div class="text-gray-600 body-font md:flex-nowrap">
+                  <div class="container py-8 mx-auto flex flex-wrap flex-col">
+                    <div class="flex items-center space-x-4">
+                      <svg
+                        class="h-7 w-7 text-blue-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+                        />
+                      </svg>
+                      <h2
+                        class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1"
+                      >
+                      Socail Media & Portfolio links
+                      </h2>
+                    </div>
+                    {% for url in resume.get_urls %}
+                    {% include 'base/partials/urls_inline.html' with data=url %}
+                    {% endfor %}
+                  </div>
+                  {% if new_url_url %}
+                    <div id="url-create"></div>
+                    <button hx-get="{{new_url_url}}"
+                    hx-trigger="click" hx-target="#url-create" hx-swap="beforeend"
+                    class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max"
+                    >
+                    Add New
+                    </button>
+                  {% endif %}
+                  </div>
+                </div>
                 
                 <div class="text-gray-600 body-font md:flex-nowrap">
                   <div class="container py-8 mx-auto flex flex-wrap flex-col">
@@ -287,7 +344,7 @@
                                     src="img/cover.jpg">
                             </div>
                         </div>
-                    </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -315,23 +372,21 @@
                       Publications & Appearances
                       </h2>
                     </div>
-                    <div class="leading-relaxed mt-6 flex flex-col">
-                      
-                      {% comment %} <ul class="space-y-4">
-                        <li class="flex space-x-2">
-                          <svg class="mt-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                          <p class="inline-flex">“One of a Kind Design,” Web Design Book, Poulin Publishing, 2018</p>
-                        </li>
-                        <li class="flex space-x-2">
-                          <svg class="mt-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                          <p class="inline-flex">“One of a Kind Design,” Web Design Book, Poulin Publishing, 2018</p>
-                        </li>
-                      </ul> {% endcomment %}
-                      
-                    </div>
+                    {% for publication in resume.get_publications %}
+                    {% include 'base/partials/publication_inline.html' with data=publication %}
+                    {% endfor %}
+                  </div>
+                  {% if new_publication_url %}
+                  <div id="publication-create"></div>
+                  <button hx-get="{{new_publication_url}}"
+                  hx-trigger="click" hx-target="#publication-create" hx-swap="beforeend"
+                  class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max"
+                  >
+                  Add New
+                  </button>
+                  {% endif %}
                   </div>
                 </div>
-                
             </div>
           </div>
         </div>
@@ -342,18 +397,6 @@
 
 {% endblock content %}
 
-{% comment %} 
-<form method="POST" class="mt-8">
-    {% csrf_token %}
-    <div class="grid gap-6 mb-6 lg:grid-cols-2">
-      {% for field in resume_form %}
-        <div>
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{field.label}}</label>
-            {{field}}
-          </div>
-          <br>
-      {% endfor %}
-    </div>
-    <button type="submit" class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max">Save</button>
-</form>
-{% include 'base/partials/experience-form.html' %}     {% endcomment %}
+
+{% block custom_js %}
+{% endblock custom_js %}

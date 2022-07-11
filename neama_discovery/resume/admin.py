@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Resume, Education, Experience, Work, Publications, Urls
+from .models import Resume, Education, Experience, Skills, Work, Publications, Urls
 # Register your models here.
 
 
@@ -26,6 +26,10 @@ class publicationsInline(admin.StackedInline):
 class urls(admin.StackedInline):
     model = Urls
     extra = 0
+
+class skills(admin.StackedInline):
+    model = Skills
+    extra = 0
     
 
 class ResumeInlines(admin.ModelAdmin):
@@ -35,11 +39,13 @@ class ResumeInlines(admin.ModelAdmin):
         workInline,
         publicationsInline,
         urls,
+        skills,
         ]
-    list_display = ['bio', 'skills']
+    list_display = ['bio']
     raw_id_fields = ['user']
     
 
 
 
 admin.site.register(Resume, ResumeInlines)
+#admin.site.register(Skills)

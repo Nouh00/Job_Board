@@ -1,4 +1,4 @@
-<div id="experience-{{data.id}}" class="leading-relaxed mt-6 flex flex-col relative">
+<div id="experience-{{data.id}}" class="leading-relaxed mt-6 flex flex-col ">
   
   <div class="fles flex-row">
 
@@ -10,7 +10,7 @@
     </button>
 
     <button hx-get="{{data.get_hx_edit_url}}"  hx-target="#experience-{{data.id}}" hx-trigger="click"
-    class="relative mb-10 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white">
+    class=" mb-10 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" 
         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -30,4 +30,5 @@
      </div>
      <p class="mt-4">
        {{data.description}}
-     
+     </p> 
+</div>

@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--bootstrap-->
+    
+    
+    
     {% tailwind_preload_css %}
     {% tailwind_css v='1' %}
     <title>Neama Discovery</title>
@@ -23,6 +27,7 @@
             event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}'
         })
     </script>
+    
     {% block custom_js %}{% endblock custom_js %}
 </body>
 </html>

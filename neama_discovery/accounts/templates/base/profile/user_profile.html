@@ -27,14 +27,6 @@
               class="flex items-center justify-between text-sm text-gray-600"
             ></div>
           </div>
-          <div class="flex flex-row justify-center mt-2">
-            <a href="{% url 'update-recruiter' user.id %}">
-            <p class="text-xs p-2 bg-gray-500 text-white px-4 rounded-full">
-              Edit Profile
-            </p>
-            <div class="flex items-center justify-between text-sm text-gray-600">
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -66,7 +58,7 @@
                   <h2
                     class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1"
                   >
-                    Personel Information
+                  General profile settings
                   </h2>
                 </div>
                 <div class="w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md mt-8">
@@ -102,31 +94,16 @@
                         <p class="py-2 text-sm text-gray-700">{{user_data.birth}}</p>
                       </div>
                     </div>
+                    
+                    <div class="flex flex-row justify-center mt-2">
+                      <a href="{% url 'update-recruiter' user.id %}">
+                        <p class="p-2 bg-gray-500 text-white px-4 rounded-full">
+                          Update Profile
+                        </p>
+                      </a>
+                      <div class="flex items-center justify-between text-sm text-gray-600"></div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-gray-600 body-font">
-              <div class="container py-8 mx-auto flex flex-wrap">
-                <div class="flex items-center space-x-4">
-                  <svg
-                    class="h-7 w-7 text-blue-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-                    />
-                  </svg>
-                  <h2
-                    class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1"
-                  >
-                    Personel Resume
-                  </h2>
                 </div>
               </div>
             </div>

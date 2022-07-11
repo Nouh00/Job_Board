@@ -15,12 +15,14 @@
           />
         </a>
         <div class="flex flex-col text-center">
+          {% if user_data.fname %}
           <p class="text-gray-800 text-4xl text-center font-medium mt-2">
             {{user_data.fname | capfirst}} {{user_data.lname | capfirst}}
           </p>
           <p class="text-gray-400 font-bold text-xs mt-2 mb-4">
             @{{request.user}}
           </p>
+          {% endif %}
           <div class="flex flex-row justify-center">
             <p class="text-xs p-2 bg-gray-300 text-white px-4 rounded-full">
               Web Developer
@@ -29,7 +31,7 @@
           </div>
           {% if resume %}
           <div class="flex flex-row justify-center mt-2">
-            <a href="{% url 'update-resume' resume.id %}">
+            <a href="{% url 'resume:update-resume' resume.id %}">
               <p class="text-xs p-2 bg-gray-500 text-white px-4 rounded-full">
                 Edit Resume
               </p>
@@ -44,6 +46,7 @@
     </div>
   </div>
 </header>
+
 <section class="container m-auto mt-8 px-6 md:px-12 lg:px-6 mb-8">
   <div class="md:flex md:flex-row  text-gray-600">
     <!--column1-->
@@ -342,7 +345,9 @@
       </div>
     </div>
     <!--column2-->
+    
     {% include 'partials/userInfo_card.html' with user=user urls=urls %}
+    
   </div>
 </section>
 {% endblock content %}

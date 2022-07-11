@@ -54,7 +54,7 @@
             <div class="divide-y-2 divide-gray-100" bis_skin_checked="1" method="POST">
               <div class="py-8 flex flex-col md:flex-nowrap">
               <div class="text-gray-600 body-font">
-                <div class="container py-8 mx-auto flex flex-col" id="wrapper">
+                <div class="container py-8 mx-auto flex flex-col">
                   <div class="flex items-center space-x-4">
                     <svg
                       class="h-7 w-7 text-blue-300"
@@ -72,37 +72,11 @@
                     <h2
                       class="inline-flex text-2xl font-medium text-gray-900 title-font mb-1"
                     >
-                      Create Resume
+                      Resume Created!
+                      <a>Updatae Your CV with your personel information</a>
                     </h2>
                     <h4 class="inline-flex text-xl font-medium text-green-700 title-font mb-1">{{message}}</h4>
                   </div>
-                <form method="POST" class="mt-8">
-                    {% csrf_token %}
-                    <div class="grid gap-6 mb-6 lg:grid-cols-2">
-                      {% for field in resume_form %}
-                        <div>
-                            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{field.label}}</label>
-                            {{field}}
-                          </div>
-                      {% endfor %}
-                    </div>
-                </form>
-                <form method="POST">
-                    {% if experiencesForm %}
-                        {{experiencesForm.management_form}}
-                        <div id="experience-form-list">
-                            {% for form in experiencesForm %}
-                                {% csrf_token %}
-                                    <div class='experience-form'>
-                                        {{form}}
-                                    </div>
-                                {% endfor %}
-                        </div>
-                            <button id="add-more" type="button">Add Experience</button>
-                            <div class="hidden" id="empty-form">    {{experiencesForm.empty_form}}   </div>
-                    {% endif %}
-                    <button type="submit" class="w-full text-white font-semibold py-3 px-6 rounded-md text-center transition bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 focus:bg-sky-600 sm:w-max">Update Profile</button>
-                </form>                
                 </div>
               </div>
             </div>
@@ -114,33 +88,3 @@
 
 
 {% endblock content %}
-
-{% block custom_js %}
-<script>
-    document.addEventListener('click', (event)=>{
-        if (event.target.id == 'add-more') {
-            add_new_form(event)
-        }
-    })
-
-    function add_new_form(event) {
-        if (event) {
-            event.preventDefault()
-        }
-        const totalNewForms = document.getElementById('id_form-TOTAL_FORMS')
-        const currentExperienceForms = document.getElementsByClassName('experience-form')
-        const currentFormCount = currentExperienceForms.length // + 1
-        const formCopyTarget = document.getElementById('experience-form-list')
-        const copyEmptyFormEl = document.getElementById('empty-form').cloneNode(true)
-        copyEmptyFormEl.setAttribute('class', 'experience-form')
-        copyEmptyFormEl.setAttribute('id', `form-${currentFormCount}`)
-        const regex = new RegExp('__prefix__', 'g')
-        copyEmptyFormEl.innerHTML = copyEmptyFormEl.innerHTML.replace(regex, currentFormCount)
-        totalNewForms.setAttribute('value', currentFormCount + 1)
-        // now add new empty form element to our html form
-        formCopyTarget.append(copyEmptyFormEl)
-        debugger;
-    }
-</script>
-
-{% endblock custom_js %}

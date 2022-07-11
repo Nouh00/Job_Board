@@ -3,8 +3,8 @@
 <header>
   <div class="pt-32 pb-16 md:pt-40 overflow-hidden">
     <div class="container m-auto px-6 md:px-12 lg:px-6">
-      <div class="bg-gray-700 rounded-t-lg h-36 w-full mb-4"></div>
-      <div class="flex flex-col items-center bg-black -mt-32">
+      <div class="bg-gray-700 rounded-t-lg h-36  w-full mb-4"></div>
+      <div class="flex flex-col ml-16 bg-black -mt-16">
         <a href="#" class="block">
           <img
             alt="profil"
@@ -67,8 +67,7 @@
                   <div class="grid gap-6 mb-6 lg:grid-cols-2">
                     {% for field in profile_form %}
                       <div>
-                          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{field.label}}</label>
-                          {% comment %} <input type="text" name="degree1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="{{resume.education.degree}}" required> {% endcomment %}
+                          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{field.label}}</label>
                           {{field}}
                         </div>
                     {% endfor %}
