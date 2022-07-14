@@ -1,34 +1,54 @@
-<div id="education-{{data.id}}" class="leading-relaxed mt-6 flex flex-col">
-    <div class="fles flex-row">
-        
-      <button hx-post="{{data.get_hx_delete_url}}" hx-trigger="click"
-    hx-target="#education-{{data.id}}" hx-swap="outerHTML">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-        
-        <button hx-get="{{data.get_hx_edit_url}}"  hx-target="#education-{{data.id}}" hx-trigger="click"
-    class="mb-10 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" 
-        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
-            </path>
-        </svg>
-    </button>
-    </div>
-    
-    <div class="flex flex-row space-x-4 ">
-       <h4 class="font-medium"> {{data.degree}}, {{data.major}} </h4>
-      <p class="text-cyan-600">  {{data.start_date}}  <span class="text-gray-600">To</span>   {{data.end_date}} </p>
-    </div>
-    <div class="flex flex-row space-x-2">
-      <h4 class="text-cyan-600"> {{data.university}}, </h4>
-      <p class="text-cyan-600"> {{data.wilaya}} </p>
-    </div>
-    
-    <p class="mt-4">
-      {{data.description}}
+<div id="education-{{data.id}}" class="leading-relaxed mt-6 flex flex-col relative shadow-md p-6 pt-10 md:p-6 rounded-md">
+  
+
+  <div class="flex flex-row flex-wrap md:space-x-4 lg:space-x-4">
+    <h4 class="font-medium">{{data.degree}}, {{data.major}}</h4>
+    <p class="text-cyan-600">
+      {{data.start_date}}
+      <span class="text-gray-600">To</span> {{data.end_date}}
     </p>
+
+
+    <div class="absolute top-4 right-2 md:flex md:flex-row md:items-start lg:flex lg:flex-row lg:items-start">
+      <button
+        hx-post="{{data.get_hx_delete_url}}"
+        hx-trigger="click"
+        hx-target="#education-{{data.id}}"
+        hx-swap="outerHTML"
+        class="mr-2 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm inline-flex items-center"
+      >
+      <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </button>
+      
+  
+      <button
+        hx-get="{{data.get_hx_edit_url}}"
+        hx-target="#education-{{data.id}}"
+        hx-trigger="click"
+        class="bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm inline-flex items-center"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
   </div>
+  <div class="flex flex-row space-x-2">
+    <h4 class="text-cyan-600">{{data.university}},</h4>
+    <p class="text-cyan-600">{{data.wilaya}}</p>
+  </div>
+
+  <p class="mt-4">{{data.description}}</p>
+</div>

@@ -1,0 +1,60 @@
+{% load static %}
+<header>
+    <div class="pt-32 pb-16 md:pt-40 overflow-hidden">
+      <div class="container m-auto px-6 md:px-12 lg:px-6">
+        <div class=" bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-t-lg h-36 w-full mb-4"></div>
+        <div class="flex flex-col items-center -mt-28">
+          <a href="#" class="block">
+            <img
+              alt="profil"
+              src="{% static 'img/profile_pic.png' %}"
+              class="bg-white shadow-md object-cover rounded-full mb-4 h-32 w-32 md:h-44 md:w-44 border-2 border-white"
+            />
+          </a>
+          <div class="flex flex-col text-center">
+            {% if user_data.fname %}
+            <p class="text-gray-800 text-4xl text-center font-medium mt-2">
+              {{user_data.fname | capfirst}} {{user_data.lname | capfirst}}
+            </p>
+            <p class="text-gray-400 font-bold text-xs mt-2 mb-4">
+              @{{request.user}}
+            </p>
+            {% endif %}
+            <div class="flex flex-row justify-center">
+              <p class="text-sm font-semibold p-2 bg-gradient-to-bl from-cyan-600 to-sky-500 text-white px-4 rounded-full">
+                Web Developer
+              </p>
+              <div
+                class="flex items-center justify-between text-sm text-gray-600"
+              ></div>
+            </div>
+            {% if page %}
+                <div class="flex flex-row justify-center mt-2">
+                    <a href="{% url 'resume:resume' request.user.id %}">
+                    <p class="text-sm font-semibold p-2 bg-gradient-to-r from-cyan-600 to-sky-500 text-white px-4 rounded-full">
+                        Resume Preview
+                    </p>
+                    </a>
+                    <div
+                    class="flex items-center justify-between text-sm text-gray-600"
+                    ></div>
+                </div>
+            {% else %}
+            {% if resume %}
+                <div class="flex flex-row justify-center mt-2">
+                <a href="{% url 'resume:update-resume' resume.id %}">
+                    <p class="text-sm font-semibold p-2 bg-gradient-to-r from-cyan-600 to-sky-500 text-white px-4 rounded-full">
+                    Edit Resume
+                    </p>
+                </a>
+                <div
+                    class="flex items-center justify-between text-sm text-gray-600"
+                ></div>
+                {% endif %}
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

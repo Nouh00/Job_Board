@@ -33,7 +33,7 @@ def resume(request, pk):
         "urls":urls,
         "education":education,
         "certificates":"",
-        "user":recruiter
+        "user_data":recruiter
     }
     return render(request, 'base/resume.html', context)
 
@@ -46,6 +46,7 @@ def createResume(request):
     return redirect('resume:update-resume', pk=resume.id)
 
 def updateResume(request, pk):
+    page="edit"
     user = request.user
     recruiter = Recruiter.objects.get(user=user)
     resume = Resume.objects.get_or_create(user=user)[0]
@@ -69,6 +70,7 @@ def updateResume(request, pk):
     context = {
         "resume":resume,
         "user_data":recruiter,
+        "page":page,
 
         "experience_form":ExperienceForm,
         "education_form":EducationForm,
